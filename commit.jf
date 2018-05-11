@@ -1,0 +1,24 @@
+node ('linux && java && commit') {  
+    def mvnHome
+    currentBuild.result = "Success"
+    try {
+          stage ('Environment Dump') {
+             sh 'env | sort'
+          }
+
+	  stage('Prepare') { 
+	     mvnHome=tool 'maven'
+	     echo "$mvnHome"
+	  }
+  
+          stage('Build and Test') { 
+           	 	sh script: '/opt/maven/bin/mvn clean install'
+          }      
+
+    } catch (err) {  
+       currentBuild.result = "UNSTABLE"
+       throw err 
+    } finally {
+       step([$class: 'JUnitResultArchiver', allowEmptyResults: true , testResults: '**/TEST-*.xml'])
+    }
+}
