@@ -5,4 +5,20 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ParkingLot</name>
   <description>Parking Lot Description</description>
+  <properties>
+  		<core.version>5.10.1</core.version>
+  		<junit.version>4.12</junit.version>
+  </properties>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.healthedge.core</groupId>
+  		<artifactId>core-main</artifactId>
+  		<version>${core.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>${junit.version}</version>
+  	</dependency>
+  </dependencies>
 </project>
