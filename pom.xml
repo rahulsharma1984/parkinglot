@@ -9,6 +9,7 @@
 	<properties>
 		<coreversion>5.9</coreversion>
 		<junit.version>4.12</junit.version>
+		<junit.version2>4.12</junit.version2>
 	</properties>
 	<dependencies>
 		<dependency>
